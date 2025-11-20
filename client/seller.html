@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>لوحة البائع - سوق حارتي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-bar">
+      <div>
+        <h1 class="logo">لوحة البائع</h1>
+        <p class="subtitle">إدارة حسابك وإعلاناتك في سوق حارتي</p>
+      </div>
+      <div class="user-status" id="userStatus">
+        غير مسجل دخول
+      </div>
+    </div>
+
+    <div class="container header-actions">
+      <a href="index.html" class="btn-secondary btn-sm">الرجوع للسوق</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- حساب البائع -->
+    <section class="form-section" id="authSection">
+      <h2 class="section-title">حساب البائع</h2>
+
+      <div class="form-grid">
+        <form id="registerForm" class="card">
+          <h3 class="form-title">تسجيل حساب جديد</h3>
+          <div class="form-group">
+            <label for="regName">الاسم</label>
+            <input type="text" id="regName" required />
+          </div>
+          <div class="form-group">
+            <label for="regWhatsapp">رقم الواتساب</label>
+            <input type="tel" id="regWhatsapp" required />
+          </div>
+          <div class="form-group">
+            <label for="regPassword">كلمة المرور</label>
+            <input type="password" id="regPassword" required />
+          </div>
+          <button type="submit" class="btn-primary btn-full">إنشاء حساب</button>
+        </form>
+
+        <form id="loginForm" class="card">
+          <h3 class="form-title">تسجيل الدخول</h3>
+          <div class="form-group">
+            <label for="loginWhatsapp">رقم الواتساب</label>
+            <input type="tel" id="loginWhatsapp" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">كلمة المرور</label>
+            <input type="password" id="loginPassword" required />
+          </div>
+          <button type="submit" class="btn-secondary btn-full">دخول</button>
+          <p id="loginStatus" class="hint"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- بيانات الحساب + ملخص -->
+    <section class="form-section" id="profileSection">
+      <h2 class="section-title">بيانات حسابك</h2>
+      <div class="card seller-dashboard-card">
+        <div class="seller-dashboard-main">
+          <div>
+            <p><strong>الاسم:</strong> <span id="profileName">-</span></p>
+            <p><strong>رقم الواتساب:</strong> <span id="profileWhatsapp">-</span></p>
+            <p class="hint">يمكنك مشاركة صفحة البائع العامة مع العملاء لعرض كل إعلاناتك.</p>
+            <a id="publicProfileLink" href="#" class="seller-public-link">فتح صفحتي العامة</a>
+          </div>
+          <div class="seller-stats" id="sellerDashboardStats">
+            <div class="seller-stat">
+              <span class="seller-stat-label">عدد إعلاناتي</span>
+              <span class="seller-stat-value" id="myAdsCount">0</span>
+            </div>
+            <div class="seller-stat">
+              <span class="seller-stat-label">عدد المدن</span>
+              <span class="seller-stat-value" id="myCitiesCount">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- نموذج إضافة / تعديل إعلان -->
+    <section class="form-section" id="adFormSection">
+      <h2 class="section-title">إعلان جديد / تعديل إعلان</h2>
+      <form id="adForm" class="card ad-form">
+        <input type="hidden" id="editingAdId" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="title">عنوان الإعلان *</label>
+            <input type="text" id="title" required placeholder="مثال: لابتوب مستعمل بحالة ممتازة" />
+          </div>
+
+          <div class="form-group">
+            <label for="price">السعر (بالريال اليمني) *</label>
+            <input type="number" id="price" required min="0" placeholder="مثال: 150000" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">المدينة *</label>
+            <select id="city" required>
+              <option value="">اختر المدينة</option>
+              <option value="صنعاء">صنعاء</option>
+              <option value="عدن">عدن</option>
+              <option value="تعز">تعز</option>
+              <option value="حضرموت">حضرموت</option>
+              <option value="الحديدة">الحديدة</option>
+              <option value="إب">إب</option>
+              <option value="أخرى">أخرى</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="category">نوع المنتج *</label>
+            <select id="category" required>
+              <option value="">اختر النوع</option>
+              <option value="أجهزة">أجهزة</option>
+              <option value="ملابس">ملابس</option>
+              <option value="كتب">كتب</option>
+              <option value="أثاث">أثاث</option>
+              <option value="يدوي">منتجات يدوية</option>
+              <option value="أخرى">أخرى</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="imageUrl">رابط الصورة (اختياري)</label>
+          <input type="url" id="imageUrl" placeholder="مثال: https://example.com/image.jpg" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">وصف الإعلان</label>
+          <textarea id="description" rows="3" placeholder="أضف تفاصيل عن حالة المنتج، مدة الاستخدام، سبب البيع..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="whatsapp">رقم الواتساب للتواصل *</label>
+          <input type="tel" id="whatsapp" required placeholder="مثال: 771234567" />
+        </div>
+
+        <button type="submit" class="btn-primary btn-full" id="adSubmitBtn">نشر الإعلان</button>
+        <button type="button" class="btn-secondary btn-full" id="adCancelEditBtn" style="margin-top: 0.5rem; display: none;">إلغاء التعديل</button>
+      </form>
+    </section>
+
+    <!-- إعلاناتي -->
+    <section class="form-section" id="myAdsSection">
+      <h2 class="section-title">إعلاناتي</h2>
+      <div id="myAdsContainer" class="ads-grid"></div>
+      <p id="noMyAdsMessage" class="no-ads-message" hidden>لا توجد إعلانات لك حتى الآن.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>سوق حارتي &copy; <span id="year"></span> - لوحة البائع</p>
+    </div>
+  </footer>
+
+  <script src="seller.js"></script>
+</body>
+</html>

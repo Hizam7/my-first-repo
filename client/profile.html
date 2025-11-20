@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>صفحة البائع - سوق حارتي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-bar">
+      <div>
+        <h1 class="logo">صفحة البائع</h1>
+        <p class="subtitle">عرض منتجات بائع واحد في سوق حارتي</p>
+      </div>
+      <div class="user-status" id="userStatus">
+        غير مسجل دخول
+      </div>
+    </div>
+
+    <div class="container header-actions">
+      <a href="index.html" class="btn-secondary btn-sm">الرجوع للسوق</a>
+      <a href="seller.html" class="btn-primary btn-sm" style="margin-right: 0.5rem;">لوحة البائع الخاصة بي</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <div class="card seller-profile-card">
+        <div class="seller-profile-main">
+          <div>
+            <h2 class="section-title" id="sellerName">جارِ تحميل البائع...</h2>
+            <p class="seller-whatsapp" id="sellerWhatsapp"></p>
+            <p class="hint" id="sellerSince"></p>
+          </div>
+          <div class="seller-stats" id="sellerStats">
+            <div class="seller-stat">
+              <span class="seller-stat-label">عدد الإعلانات</span>
+              <span class="seller-stat-value" id="sellerAdsCount">-</span>
+            </div>
+            <div class="seller-stat">
+              <span class="seller-stat-label">عدد المدن</span>
+              <span class="seller-stat-value" id="sellerCitiesCount">-</span>
+            </div>
+          </div>
+        </div>
+        <p class="hint" id="viewerHint"></p>
+      </div>
+    </section>
+
+    <section class="ads-section">
+      <div class="section-header">
+        <h2 class="section-title">إعلانات البائع</h2>
+      </div>
+      <div id="sellerAdsContainer" class="ads-grid"></div>
+      <p id="noSellerAdsMessage" class="no-ads-message" hidden>لا توجد إعلانات لهذا البائع حتى الآن.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>سوق حارتي &copy; <span id="year"></span> - صفحة البائع</p>
+    </div>
+  </footer>
+
+  <script src="profile.js"></script>
+</body>
+</html>

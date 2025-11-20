@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>سوق حارتي - إعلانات مجانية في اليمن</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-bar">
+      <div>
+        <h1 class="logo">سوق حارتي</h1>
+        <p class="subtitle">بيع وشراء المستعمل والمنتجات اليدوية في اليمن مجانًا</p>
+      </div>
+      <div class="user-status" id="userStatus">
+        غير مسجل دخول
+      </div>
+    </div>
+
+    <div class="container header-actions">
+      <a href="seller.html" class="btn-primary btn-sm">
+        لوحة البائع
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- فلاتر البحث -->
+    <section class="filters-section card">
+      <div class="section-header">
+        <h2 class="section-title">ابحث في الإعلانات</h2>
+      </div>
+      <div class="filters-grid">
+        <div class="form-group">
+          <label for="cityFilter">المدينة</label>
+          <select id="cityFilter">
+            <option value="">كل المدن</option>
+            <option value="صنعاء">صنعاء</option>
+            <option value="عدن">عدن</option>
+            <option value="تعز">تعز</option>
+            <option value="حضرموت">حضرموت</option>
+            <option value="الحديدة">الحديدة</option>
+            <option value="إب">إب</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="categoryFilter">نوع المنتج</label>
+          <select id="categoryFilter">
+            <option value="">كل الأنواع</option>
+            <option value="أجهزة">أجهزة</option>
+            <option value="ملابس">ملابس</option>
+            <option value="كتب">كتب</option>
+            <option value="أثاث">أثاث</option>
+            <option value="يدوي">منتجات يدوية</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="searchText">كلمة مفتاحية</label>
+          <input type="text" id="searchText" placeholder="مثال: لابتوب، طاولة، كتاب..." />
+        </div>
+
+        <div class="form-group filter-button-wrapper">
+          <button id="clearFiltersBtn" class="btn-secondary btn-sm">مسح الفلاتر</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- الإحصائيات البسيطة -->
+    <section class="stats-section">
+      <div class="stat-card">
+        <span class="stat-label">عدد الإعلانات</span>
+        <span class="stat-value" id="adsCount">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">مدينة مفعّلة</span>
+        <span class="stat-value" id="activeCity">كل المدن</span>
+      </div>
+    </section>
+
+    <!-- خدمة العملاء والتواصل -->
+    <section class="support-section card">
+      <div class="section-header">
+        <h2 class="section-title">خدمة العملاء والتواصل</h2>
+      </div>
+      <p class="support-text">
+        لأي استفسار أو مساعدة بخصوص الإعلانات والحساب، يمكنك التواصل معنا مباشرة عبر الواتساب أو الاتصال الهاتفي.
+      </p>
+      <div class="support-actions">
+        <a href="https://wa.me/967779677857" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          تواصل واتساب
+        </a>
+        <a href="tel:779677857" class="btn-call">
+          اتصال مباشر
+        </a>
+      </div>
+    </section>
+
+    <!-- قائمة الإعلانات -->
+    <section class="ads-section">
+      <div class="section-header">
+        <h2 class="section-title">أحدث الإعلانات</h2>
+      </div>
+      <div id="adsContainer" class="ads-grid">
+        <!-- تعبئة ديناميكية -->
+      </div>
+      <p id="noAdsMessage" class="no-ads-message" hidden>لا توجد إعلانات مطابقة حاليًا.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>سوق حارتي &copy; <span id="year"></span> - إعلانات مجانية في اليمن</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
